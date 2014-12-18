@@ -1,0 +1,47 @@
+import java.util.*;
+import Lab3Help.BStop;
+
+public class GraphN {
+	private ArrayList<Edge> edgelist;
+	private BStop stop;
+	
+	public GraphN(BStop stop){
+		this.edgelist = new ArrayList<Edge>();
+		this.stop = stop;
+	}
+	/**
+	 * 
+	 * @return The name of a bus stop
+	 */
+	public String getName(){
+		return this.stop.getName();
+	}
+	/**
+	 * Adds an edge to the graphs node.
+	 * also makes "this" as the origin node.
+	 * @param edge an edge
+	 */
+	public void addEdge(Edge edge){
+		edge.SetOrigin(this);
+		this.edgelist.add(edge);
+	}
+	
+	/**
+	 *
+	 * @return A list with the edges
+	 */
+	public ArrayList<Edge> getEdges(){
+		return this.edgelist;
+	}
+	
+	/**
+	 * 
+	 * @return the bus stop that exists in the
+	 * graph node
+	 */
+	public BStop getStop(){
+		return this.stop;
+	}
+	
+	
+}
